@@ -31,3 +31,13 @@ df[with(dd, order(-z, b)), ]
 ```
 d_xts_hourly = period.apply(d_xts, endpoints(d_xts, "hours"), sum)
 ```
+
+**How to convert an xts object to dataframe so that dates are stored in a separate column?**
+```
+df = data.frame(date=index(x), coredata(x))
+```
+
+**How to extract hour from a POSIXct object?**
+```
+hour = as.POSIXlt(posixct)$hour
+```
