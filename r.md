@@ -26,3 +26,8 @@ By column name:
 ```
 df[with(dd, order(-z, b)), ]
 ```
+
+**How to aggregate hourly data of an xts object?**
+```
+d_xts_hourly = period.apply(d_xts, endpoints(d_xts, "hours"), sum)
+```
