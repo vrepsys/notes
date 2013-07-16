@@ -1,7 +1,17 @@
 ## Notes on R
 
-**How do you subset an xts object to include only one of a few weekdays?**
+**How to read data from a csv file**
+```
+df = read.csv('data.csv')
+```
 
-```R
+
+**How do you subset an xts object to include only one of a few weekdays?**
+```
 weekdays = x[.indexwday(x) %in% 1:5]
+```
+
+**How to convert date string to POSIXct and add as a column to a data frame?**
+```
+df$dtime <- as.POSIXct(strptime(df[, 3], "%Y-%m-%d %H:%M:%S"), "GMT")
 ```
