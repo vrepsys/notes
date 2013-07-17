@@ -45,7 +45,7 @@ hour = as.POSIXlt(posixct)$hour
 
 **How to create an xts object?**
 
-where df is a data frame containing two columns. Column #1 contains POSIXct dates, column #2 contains observation values.
+df is a data frame containing two columns. Column #1 contains POSIXct dates, column #2 contains observation values.
 ```
 xts <- xts(df[,2], order.by=df[,1])
 ```
