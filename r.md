@@ -42,12 +42,15 @@ df = data.frame(date=index(x), coredata(x))
 hour = as.POSIXlt(posixct)$hour
 ```
 
+
 **How to create an xts object?**
+
 where df is a data frame containing two columns. Column #1 contains POSIXct dates, column #2 contains observation values.
 ```
 xts <- xts(df[,2], order.by=df[,1])
 ```
 Creating an xts object containing only dates and attaching a column later:
+
 ```
 xts <- xts(order.by=df[,2])
 xts <- merge(xts, dummy=1)
