@@ -20,11 +20,11 @@ df$dtime <- as.POSIXct(strptime(df[, 3], "%Y-%m-%d %H:%M:%S"), "GMT")
 
 By column index:
 ```
-dd[ order(-df[,4], df[,1]), ]
+df[ order(-df[,4], df[,1]), ]
 ```
 By column name:
 ```
-df[with(dd, order(-z, b)), ]
+df[with(df, order(-z, b)), ]
 ```
 
 **How to aggregate hourly data of an xts object?**
